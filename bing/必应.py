@@ -3,7 +3,6 @@ import re
 import urllib.request
 import os
 import datetime
-import time
 
 
 def getPage(url):
@@ -32,9 +31,10 @@ def parserHTML(html):
 
 
 def download(imageurl, name):
-    if not os.path.exists('C:\\Users\\Administrator\\Desktop\\bing'):
-        os.mkdir('C:\\Users\\Administrator\\Desktop\\bing')
-    os.chdir('C:\\Users\\Administrator\\Desktop\\bing')
+    #可修改下面三行os库的语句对下载目录进行修改
+    if not os.path.exists('C:\\Users\\xxx\\Desktop\\bing'):
+        os.mkdir('C:\\Users\\xxx\\Desktop\\bing')
+    os.chdir('C:\\Users\\xxx\\Desktop\\bing')
     try:
         data = urllib.request.urlopen(imageurl).read()
         with open(name, "wb") as code:
